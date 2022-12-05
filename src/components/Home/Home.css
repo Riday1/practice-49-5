@@ -35,3 +35,24 @@
     padding: 4px;
     box-shadow: 2px 2px 8px black;
 }
+
+.cart-info-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.cart-info-container p {
+    /* text-decoration: none;
+     */
+    margin: 0px;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    margin-left: 6px;
+
+
+}

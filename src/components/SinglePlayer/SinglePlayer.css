@@ -1,0 +1,28 @@
+.cart {
+    width: 250px;
+    height: 450px;
+    padding: 4px;
+    /* border: 1px solid gray; */
+    margin: 2px;
+    box-shadow: 2px 2px 8px gray;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.player-img {
+    width: 250px;
+
+
+}
+
+.cart-btn {
+
+    padding: 10px 15px;
+    margin: 3px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+
+
+}

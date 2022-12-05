@@ -4,14 +4,18 @@ import './Home.css'
 const Home = () => {
     const [players, setPlayers] = useState([]);
     const [search, setSearch] = useState("");
-
+    const [cart, setCart] = useState([]);
     useEffect(() => {
         fetch(`https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${search}`)
             .then(res => res.json())
             .then(data => setPlayers(data.player))
     }, [search])
 
+    const deleteFromCart = (id) => {
 
+        const rest = cart.filter(player => player.idPlayer !== id)
+        setCart(rest)
+    }
     console.log(search)
     return (
         <div className='home-container'>
@@ -21,13 +25,30 @@ const Home = () => {
                     <button className='search-btn'>Search</button>
                 </div>
                 <div>
-                    <Players players={players}></Players>
+                    <Players
+                        cart={cart}
+                        setCart={setCart}
+                        players={players}
+
+                    ></Players>
                 </div>
             </div>
             <div className="right-side">
                 <h4>Add To Cart Container</h4>
+
+                {
+                    cart.map(player =>
+                        <div className="cart-info-container">
+                            <p>{player.strPlayer}</p>
+                            <button
+                                onClick={() => deleteFromCart(player.idPlayer)}
+                                className='delete-btn'>X</button>
+                        </div>
+                    )
+                }
+
             </div>
-        </div>
+        </div >
     );
 };
 
