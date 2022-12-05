@@ -1,0 +1,11 @@
+.nav-bar {
+    background-color: bisque;
+    /* height: 80px; */
+    padding: 20px;
+
+}
+
+.nav-bar h2 {
+    margin: 0px auto;
+    text-align: center;
+}
