@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Players from '../Players/Players';
+import Swal from 'sweetalert2'
 import './Home.css'
 const Home = () => {
     const [players, setPlayers] = useState([]);
@@ -14,7 +15,13 @@ const Home = () => {
     const deleteFromCart = (id) => {
 
         const rest = cart.filter(player => player.idPlayer !== id)
+
         setCart(rest)
+        Swal.fire(
+            'Successful!',
+            'You Delete an Item!',
+            'success'
+        )
     }
     console.log(search)
     return (
